@@ -1,5 +1,11 @@
 # Voice Diarization Pipeline — dependencies
-# Install: pip install -r requirements.txt
+#
+# PREFEROWANY INSTALL (uv):
+#   uv sync
+#
+# Alternatywnie (pip):
+#   pip install torch==2.4.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements.txt
 
 # PyTorch CPU-only — PINOWANE wersje (pyannote.audio 3.3.x wymaga torchaudio <2.5)
 # Jeśli instalujesz osobno:

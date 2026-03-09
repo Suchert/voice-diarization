@@ -1,0 +1,22 @@
+[project]
+name = "voice-diarization"
+version = "0.1.0"
+description = "Offline voice diarization pipeline with cross-recording speaker matching"
+requires-python = ">=3.11"
+dependencies = [
+    "torch==2.4.1",
+    "torchaudio==2.4.1",
+    "pyannote.audio==3.3.2",
+    "huggingface_hub<0.25",
+    "silero-vad",
+    "speechbrain",
+    "pydub",
+    "scikit-learn",
+    "numpy",
+    "pandas",
+    "rich",
+]
+
+[tool.uv]
+# PyTorch CPU-only index — uv pobierze stąd torch i torchaudio
+extra-index-url = ["https://download.pytorch.org/whl/cpu"]

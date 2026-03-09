@@ -42,24 +42,22 @@ requirements.txt    — Python dependencies
 
 ## Setup
 ```powershell
-python -m venv venv
-.\venv\Scripts\activate          # Windows
-pip install -r requirements.txt
+uv sync                          # tworzy .venv + instaluje wszystko
 # Edit .env with HuggingFace token
-python save_models.py            # one-time download
+uv run save_models.py            # one-time download
 ```
 
 ## Usage
 ```powershell
 # Full pipeline:
-python run_all.py
+uv run run_all.py
 
 # Individual steps:
-python convert.py
-python diarize.py
-python enroll_speaker.py
-python match_speakers.py
-python label_speakers.py
+uv run convert.py
+uv run diarize.py
+uv run enroll_speaker.py
+uv run match_speakers.py
+uv run label_speakers.py
 ```
 
 ## Tech Stack
