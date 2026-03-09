@@ -1,0 +1,38 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Models (large, re-downloadable)
+pretrained_models/
+hub/
+
+# Data
+input/*.mp4
+output/wav/*.wav
+output/json/*.json
+output/csv/*.csv
+
+# Speaker database (embeddings are binary)
+speaker_db/embeddings/*.npy
+
+# Enrollment samples
+enrollment_samples/*.wav
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
