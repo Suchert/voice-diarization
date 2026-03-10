@@ -18,6 +18,7 @@ EMBEDDINGS_DIR = DB_DIR / "embeddings"
 PROFILES_PATH = DB_DIR / "profiles.json"
 ENROLLMENT_DIR = PROJECT_DIR / "enrollment_samples"
 PRETRAINED_DIR = PROJECT_DIR / "pretrained_models"
+TRANSCRIPT_DIR = OUTPUT_DIR / "transcript"
 ENV_PATH = PROJECT_DIR / ".env"
 
 # ============================================================
@@ -72,6 +73,16 @@ ECAPA_SAVEDIR = str(PRETRAINED_DIR / "spkrec-ecapa-voxceleb")
 PYANNOTE_MODEL = "pyannote/speaker-diarization-3.1"
 
 # ============================================================
+# TRANSKRYPCJA (faster-whisper)
+# ============================================================
+WHISPER_MODEL_SIZE = "large-v3-turbo"   # lub "medium", "small" dla szybszego/mniej dokładnego
+WHISPER_COMPUTE_TYPE = "int8"           # int8 → mniejszy RAM, szybciej na CPU
+WHISPER_LANGUAGE = "pl"                 # język nagrań (None = auto-detect)
+WHISPER_BEAM_SIZE = 5                   # beam search width
+WHISPER_CPU_THREADS = 8                 # dopasuj do liczby rdzeni CPU
+WHISPER_MODEL_DIR = str(PRETRAINED_DIR / "faster-whisper")
+
+# ============================================================
 # HELPERS
 # ============================================================
 def load_hf_token() -> str:
@@ -100,6 +111,6 @@ def load_hf_token() -> str:
 
 def ensure_dirs():
     """Utwórz wszystkie katalogi projektowe."""
-    for d in [INPUT_DIR, WAV_DIR, JSON_DIR, CSV_DIR,
+    for d in [INPUT_DIR, WAV_DIR, JSON_DIR, CSV_DIR, TRANSCRIPT_DIR,
               DB_DIR, EMBEDDINGS_DIR, ENROLLMENT_DIR, PRETRAINED_DIR]:
         d.mkdir(parents=True, exist_ok=True)
